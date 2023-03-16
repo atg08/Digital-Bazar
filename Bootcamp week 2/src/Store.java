@@ -46,7 +46,7 @@ public class Store {
 
     }
 
-    //calls all the methods
+    //method to call all the other methods
     public void runBazar(){
         initStore(3, 2);
         createComputers();
