@@ -22,15 +22,14 @@ public class Computer extends Device {
         return manufacture;
     }
 
-
+    //setting ID range for computers
     @Override
     public int generateId() {
+
         return Utils.nextID(100000,10000000);
     }
 
-
-
-        //toString method
+    //toString method
     @Override
     public String toString() {
         return "Computer" + super.toString() +

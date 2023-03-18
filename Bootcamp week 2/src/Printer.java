@@ -22,8 +22,10 @@ public class Printer extends Device {
         return ppm;
     }
 
+    //setting ID range for printers
     @Override
     public int generateId() {
+
         return Utils.nextID(100,1000);
     }
 

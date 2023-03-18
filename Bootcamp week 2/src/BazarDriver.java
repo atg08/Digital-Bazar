@@ -1,10 +1,11 @@
 public class BazarDriver {
 
-    //creates an instance of class "Store" and calling its method "runBazar"
+    //creates an instance of class "Store" and takes menu options from MenuManager class
     public static void main(String[] args) {
 
         Store store = new Store();
 
+        //adding console I/O
         int selection;
         do {
             selection = MenuManager.menuItem();
@@ -21,8 +22,8 @@ public class BazarDriver {
                 case 4:
                     store.printPrinters();
                     break;
-                case 5:
-                    System.exit(0);
+
+                default: System.exit(0);
             }
         } while (selection != 5);
     }

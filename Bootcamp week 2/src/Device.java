@@ -1,6 +1,8 @@
+
+//making device an abstract class
 abstract class Device {
 
-    //string attributes
+    // attributes
 
     private String name;
     private String description;
@@ -12,6 +14,7 @@ abstract class Device {
         setDescription(description);
     }
 
+    //creating an abstract method
     public abstract int generateId();
 
     //setter setName
@@ -38,10 +41,12 @@ abstract class Device {
     }
 
 
+    //setter for abstract method
     public void setId(int id) {
         this.id = id;
     }
 
+    //getter for abstract method
     public int getId() {
         return id;
     }
