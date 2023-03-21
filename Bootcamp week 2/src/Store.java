@@ -62,13 +62,13 @@ public class Store {
     }
 
     //method to call all the other methods
-    public void runBazar(){
+    /*public void runBazar(){
         initStore(3, 2);
         createComputers();
         createPrinters();
         printComputers();
         printPrinters();
-    }
+    }*/
 
 }
 
