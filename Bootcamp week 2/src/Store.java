@@ -1,59 +1,74 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Store {
     //class to create and manage computers and printers
 
-    //attributes which are arrays of each class
-    private Computer[] computers;
-    private Printer[] printers;
+    //using ArrayLists instead of Arrays
+    private ArrayList<Computer> computers = new ArrayList<>();
+    private ArrayList<Printer> printers = new ArrayList<>();
 
-    //method with length of arrays as parameters which makes array
+
     public void initStore(int lengthOfComp , int lengthOfPrinter) {
-        this.computers = new Computer[lengthOfComp];
-        this.printers = new Printer[lengthOfPrinter];
+        this.computers = new ArrayList<>(lengthOfComp);
+        this.printers = new ArrayList<>(lengthOfPrinter);
 
     }
 
-    //method that creates computers
-    public void createComputers(){
-
-        computers[0] = new Computer("XPS", "Laptop 16 inch", "Dell");
-        computers[1] = new Computer("iMac", "Desltop 27 inch", "Apple");
-        computers[2] = new Computer("Thinkpad", "Laptop 14 inch", "Lenovo");
-
+    //method that creates computers with users input
+    public void createComputers() {
+        String name, description, manufacture;
+        Scanner sel = new Scanner(System.in);
+        System.out.print("Enter Device Name:");
+        name = sel.nextLine();
+        System.out.print("Enter Device Description:");
+        description = sel.nextLine();
+        System.out.print("Enter Computer Manufacture: ");
+        manufacture = sel.next();
+        Computer aComputer = new Computer(name, description, manufacture);
+        computers.add(aComputer);
     }
 
-    //method that creates printers
-    public void createPrinters(){
-        printers[0] = new Printer("XPS", "Laptop 16 inch", 10);
-        printers[1] = new Printer("iMac", "Desltop 27 inch", 10);
-
+    //method that creates printers with users input
+    public void createPrinters() {
+        String name, description;
+        int ppm;
+        Scanner sel = new Scanner(System.in);
+        System.out.print("Enter Device Name:");
+        name = sel.nextLine();
+        System.out.print("Enter Device Description:");
+        description = sel.nextLine();
+        System.out.print("Enter the number of pages per minute: ");
+        ppm = sel.nextInt();
+        Printer aPrinter = new Printer(name, description, ppm);
+        printers.add(aPrinter);
     }
 
     //prints computers
     public void printComputers(){
-        for (int i =0; i<computers.length;i++){
-            System.out.println("Computer (" + (i+1) + ") Type " + computers[i]);
+        for (int i =0; i<computers.size();i++){
+            System.out.println("Computer (" + (i+1) + ") ID: "+ computers.get(i).getId()+ " | Type: " + computers.get(i));
 
         }
-
 
     }
 
     //prints printers
     public void printPrinters(){
-        for (int i =0; i<printers.length;i++) {
-            System.out.println("Printer ("+(i+1)+ ") Type "+ printers[i]);
+        for (int i =0; i<printers.size();i++) {
+            System.out.println("Printer ("+(i+1)+ ") ID: " + printers.get(i).getId()+ " | Type: "+ printers.get(i));
         }
 
     }
 
     //method to call all the other methods
-    public void runBazar(){
+    /*public void runBazar(){
         initStore(3, 2);
         createComputers();
         createPrinters();
         printComputers();
         printPrinters();
-    }
+    }*/
 
 }
 

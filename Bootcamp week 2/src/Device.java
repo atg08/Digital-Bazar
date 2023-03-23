@@ -1,15 +1,21 @@
-public class Device {
 
-    //string attributes
+//making device an abstract class
+abstract class Device {
+
+    // attributes
 
     private String name;
     private String description;
+    private int id;
 
     //constructor with two parameters
     public Device(String name,String description) {
         setName(name);
         setDescription(description);
     }
+
+    //creating an abstract method
+    public abstract int generateId();
 
     //setter setName
     public void setName(String name) {
@@ -34,6 +40,16 @@ public class Device {
         return description;
     }
 
+
+    //setter for abstract method
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    //getter for abstract method
+    public int getId() {
+        return id;
+    }
 
     //toString method
     @Override

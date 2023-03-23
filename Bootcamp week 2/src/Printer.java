@@ -7,6 +7,7 @@ public class Printer extends Device {
     public Printer(String name, String description, int ppm) {
         super(name, description);
         setPpm(ppm);
+        setId(this.generateId());
     }
 
     //setter setPpm
@@ -21,10 +22,19 @@ public class Printer extends Device {
         return ppm;
     }
 
+    //setting ID range for printers
+    @Override
+    public int generateId() {
+
+        return Utils.nextID(100,1000);
+    }
+
+
+
     //toString method
     @Override
     public String toString() {
         return "Printer" + super.toString()+
-                " | ppm=" + getPpm();
+                " | PPM=" + getPpm();
     }
 }

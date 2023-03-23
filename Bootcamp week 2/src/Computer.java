@@ -7,6 +7,7 @@ public class Computer extends Device {
     public Computer(String name, String description, String manufacture) {
         super(name, description);
         setManufacture(manufacture);
+        setId(this.generateId());
     }
 
     //setter setManufacture
@@ -19,6 +20,13 @@ public class Computer extends Device {
     public String getManufacture() {
 
         return manufacture;
+    }
+
+    //setting ID range for computers
+    @Override
+    public int generateId() {
+
+        return Utils.nextID(100000,10000000);
     }
 
     //toString method
