@@ -1,3 +1,4 @@
+package main.models;
 
 //making device an abstract class
 abstract class Device {

@@ -1,3 +1,5 @@
+package main.models;
+
 public class Computer extends Device {
 
     //string attribute
@@ -32,7 +34,7 @@ public class Computer extends Device {
     //toString method
     @Override
     public String toString() {
-        return "Computer" + super.toString() +
+        return "main.models.Computer" + super.toString() +
                 " | manufacture: " + getManufacture();
     }
 }

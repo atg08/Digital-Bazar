@@ -1,6 +1,9 @@
+import main.controllers.Store;
+import main.utils.MenuManager;
+
 public class BazarDriver {
 
-    //creates an instance of class "Store" and takes menu options from MenuManager class
+    //creates an instance of class "main.controllers.Store" and takes menu options from main.utils.MenuManager class
     public static void main(String[] args) {
 
         Store store = new Store();
