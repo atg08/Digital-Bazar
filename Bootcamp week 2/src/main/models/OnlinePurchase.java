@@ -1,2 +1,4 @@
-public class OnlinePurchase {
+package main.models;
+
+public class OnlinePurchase extends Purchase {
 }
