@@ -33,7 +33,6 @@ public class PurchaseManager {
         System.out.format("%s\n", border);
         }
 
-
     private static  PurchaseManager instance;
 
     private PurchaseManager(){
