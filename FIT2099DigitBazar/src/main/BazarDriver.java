@@ -8,7 +8,7 @@ import static main.utils.MenuManager.menuItem;
 
 public class BazarDriver {
 
-    //creates an instance of class "main.controllers.Store" and takes menu options from main.utils.MenuManager class
+
     public static void main(String[] args) {
 
         MenuManager menuManager = new MenuManager();
@@ -27,6 +27,7 @@ public class BazarDriver {
                     break;
                 case 3:
                     store.createPurchase();
+                    break;
                 case 4:
                     store.printComputers();
                     break;

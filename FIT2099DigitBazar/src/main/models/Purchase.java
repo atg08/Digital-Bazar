@@ -35,8 +35,6 @@ public abstract class Purchase {
                 '}';
     }
 
-
-
     public String getDate() {
 
             return date;
@@ -78,6 +76,7 @@ public abstract class Purchase {
     }
 
     public void setPurchaseID(int purchaseID) {
-        this.purchaseID = purchaseID;
+
+            this.purchaseID = purchaseID;
     }
 }

@@ -1,6 +1,5 @@
 package main.models;
 
-import main.models.Device;
 import main.utils.Utils;
 
 public class Printer extends Device {
@@ -39,7 +38,7 @@ public class Printer extends Device {
     //toString method
     @Override
     public String toString() {
-        return "main.models.Printer" + super.toString()+
+        return "Printer" + super.toString()+
                 " | PPM=" + getPpm();
     }
 }

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ca5b34ff-e2b3-4fc1-8548-c2b1e67d2c1d" name="Changes" comment="Bootcamp week 4 prelim commit" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="week_3" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Mr2BjA10Mn3FTkJhcEcTx0uz2Y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Y2S1 UNITS/FIT2099/FIT2099 github/agup0031/FIT2099DigitBazar"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Y2S1 UNITS\FIT2099\FIT2099 github\agup0031\Bootcamp week 2\src\main\models" />
+      <recent name="C:\Y2S1 UNITS\FIT2099\FIT2099 github\agup0031\Bootcamp week 2\src\main\controllers" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="FIT2099DigitalBazar" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="FIT2099DigitalBazar" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ca5b34ff-e2b3-4fc1-8548-c2b1e67d2c1d" name="Changes" comment="" />
+      <created>1678511248565</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678511248565</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Bootcamp week 2 files">
+      <created>1678511987539</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678511987539</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Bootcamp week 2 files">
+      <created>1678942973005</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678942973005</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Bootcamp week 2 files">
+      <created>1678943140007</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678943140007</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Bootcamp week 3 basic code added">
+      <created>1678956500869</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678956500869</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Bootcamp week 3 UML diagram added">
+      <created>1679113762931</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679113762931</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Bootcamp week 3 comments added and code edited (in BazarDriver - changed to default)">
+      <created>1679114674369</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679114674369</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Bootcamp week 3 comments added and code edited (in BazarDriver - changed to default)">
+      <created>1679114828110</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679114828110</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Bootcamp week 3 comments added and code edited (in BazarDriver - changed to default) and commented out code that is outdated">
+      <created>1679387494452</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679387494452</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Bootcamp week 4 prelim commit">
+      <created>1679558622487</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679558622487</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Bootcamp week 4 prelim commit">
+      <created>1679559619967</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679559619967</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Bootcamp week 4 prelim commit">
+      <created>1679652165556</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679652165556</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Bootcamp week 2 files" />
+    <MESSAGE value="Bootcamp week 3 basic code added" />
+    <MESSAGE value="Bootcamp week 3 UML diagram added" />
+    <MESSAGE value="Bootcamp week 3 comments added and code edited (in BazarDriver - changed to default)" />
+    <MESSAGE value="Bootcamp week 3 comments added and code edited (in BazarDriver - changed to default) and commented out code that is outdated" />
+    <MESSAGE value="Bootcamp week 4 prelim commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bootcamp week 4 prelim commit" />
+  </component>
+</project>
