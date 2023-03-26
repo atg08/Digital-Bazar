@@ -105,6 +105,7 @@ public class Store implements IData {
         this.menuManager = mm;
 
     }
+    //comment
 
     public void printPurchases(){
         purchaseManager.printPurchases();
