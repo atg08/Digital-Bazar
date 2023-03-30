@@ -1,6 +1,7 @@
+package main.models;
 
 //making device an abstract class
-abstract class Device {
+public abstract class Device {
 
     // attributes
 
@@ -43,11 +44,13 @@ abstract class Device {
 
     //setter for abstract method
     public void setId(int id) {
+
         this.id = id;
     }
 
     //getter for abstract method
     public int getId() {
+
         return id;
     }
 
