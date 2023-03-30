@@ -40,7 +40,8 @@ public class BazarDriver {
 
                 default: System.exit(0);
             }
-        } while (selection != 7);
+        } while (selection != 7) ;
+
     }
 
 }
