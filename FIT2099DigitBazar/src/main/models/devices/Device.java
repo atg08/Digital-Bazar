@@ -1,4 +1,6 @@
-package main.models;
+package main.models.devices;
+
+import main.utils.Utils;
 
 //making device an abstract class
 public abstract class Device {
@@ -10,18 +12,27 @@ public abstract class Device {
     private int id;
 
     //constructor with two parameters
-    public Device(String name,String description) {
-        setName(name);
-        setDescription(description);
+    public Device(String name,String description) throws Exception {
+        if (setName(name) && setDescription(description)){
+            setName(name);
+            setDescription(description);
+        }else {
+            throw new Exception("Invalid name or description input values");
+        }
     }
 
     //creating an abstract method
     public abstract int generateId();
 
     //setter setName
-    public void setName(String name) {
+    public boolean setName(String name) {
 
-        this.name = name;
+        if (Utils.stringLength(name, 3 , 15)) {
+
+            this.name = name;
+            return true;
+        }
+        return false;
     }
     //getter getName
     public String getName() {
@@ -30,9 +41,15 @@ public abstract class Device {
     }
 
     //setter setDescription
-    public void setDescription(String description) {
+    public boolean setDescription(String description) {
 
-        this.description = description;
+        if (Utils.stringLength(description, 5 , 20)) {
+
+            this.description = description;
+            return true;
+        }
+        return false;
+
     }
 
     //getter getDescription

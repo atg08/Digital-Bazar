@@ -1,12 +1,15 @@
 package main.utils;
 
+import main.controllers.PurchaseManager;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MenuManager {
+public class MenuManagerAdmin implements IMenuManager {
 
     //creating a menu to choose from
 
-    public static int menuItem() {
+    public int menuItem() {
         Scanner sel = new Scanner(System.in);
 
         System.out.println("1) New Computer");

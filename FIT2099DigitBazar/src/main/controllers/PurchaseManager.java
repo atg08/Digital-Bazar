@@ -1,6 +1,6 @@
 package main.controllers;
 
-import main.models.Purchase;
+import main.models.purchases.Purchase;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,6 @@ public class PurchaseManager {
         if (devices.isDeviceAvailable(data.getDeviceID())) {
             purchase.add(data);
         }
-
     }
 
     public void printPurchases() {
@@ -33,9 +32,10 @@ public class PurchaseManager {
         System.out.format("%s\n", border);
         }
 
-    private static  PurchaseManager instance;
+    private static PurchaseManager instance;
 
     private PurchaseManager(){
+
         this.purchase = new ArrayList<>();
     }
 

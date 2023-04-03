@@ -1,4 +1,4 @@
-package main.models;
+package main.models.devices;
 
 import main.utils.Utils;
 
@@ -8,16 +8,24 @@ public class Computer extends Device {
     private String manufacture;
 
     //constructor
-    public Computer(String name, String description, String manufacture) {
+    public Computer(String name, String description, String manufacture) throws Exception {
         super(name, description);
-        setManufacture(manufacture);
-        setId(this.generateId());
+        if (setManufacture(manufacture)) {
+            setManufacture(manufacture);
+            setId(this.generateId());
+        }else {
+            throw new Exception("Invalid manufacture value");
+        }
     }
 
     //setter setManufacture
-    public void setManufacture(String manufacture) {
+    public boolean setManufacture(String manufacture) {
+        if (Utils.stringLength(manufacture, 3 , 15)) {
 
-        this.manufacture = manufacture;
+            this.manufacture = manufacture;
+            return true;
+        }
+        return false;
     }
 
     //getter getManufacture

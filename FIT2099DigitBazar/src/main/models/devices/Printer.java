@@ -1,5 +1,6 @@
-package main.models;
+package main.models.devices;
 
+import main.models.devices.Device;
 import main.utils.Utils;
 
 public class Printer extends Device {
@@ -8,16 +9,25 @@ public class Printer extends Device {
     private int ppm;
 
     //constructor
-    public Printer(String name, String description, int ppm) {
+    public Printer(String name, String description, int ppm) throws Exception {
         super(name, description);
-        setPpm(ppm);
-        setId(this.generateId());
+        if (setPpm(ppm)) {
+            setPpm(ppm);
+            setId(this.generateId());
+        }else {
+            throw new Exception("Invalid ppm value");
+        }
     }
 
     //setter setPpm
-    public void setPpm(int ppm) {
+    public boolean setPpm(int ppm) {
 
-        this.ppm = ppm;
+        if (Utils.intergerRange(ppm, 5 , 20)) {
+
+            this.ppm = ppm;
+            return true;
+        }
+        return false;
     }
 
     //getter getPpm

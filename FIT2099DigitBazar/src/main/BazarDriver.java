@@ -2,22 +2,22 @@ package main;
 
 import main.controllers.PurchaseManager;
 import main.controllers.Store;
-import main.utils.MenuManager;
-
-import static main.utils.MenuManager.menuItem;
+import main.utils.IMenuManager;
+import main.utils.MenuManagerAdmin;
+import main.utils.MenuManagerEmployee;
 
 public class BazarDriver {
 
 
     public static void main(String[] args) {
 
-        MenuManager menuManager = new MenuManager();
-        Store store = new Store(PurchaseManager.getInstance() , menuManager);
+        IMenuManager menuManagerAdmin = new MenuManagerAdmin();
+        Store store = new Store(PurchaseManager.getInstance() , menuManagerAdmin);
 
         //adding console I/O
         int selection;
         do {
-            selection = menuItem();
+            selection = menuManagerAdmin.menuItem();
             switch (selection) {
                 case 1:
                     store.createComputers();

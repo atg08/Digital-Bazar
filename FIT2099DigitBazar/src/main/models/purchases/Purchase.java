@@ -1,4 +1,4 @@
-package main.models;
+package main.models.purchases;
 
 import main.utils.PurchaseType;
 import main.utils.Utils;
@@ -12,12 +12,17 @@ public abstract class Purchase {
         private String date;
         private PurchaseType purchaseType;
 
-        public Purchase(int customerID , int deviceID, String date, PurchaseType purchaseType ) {
-            setPurchaseID(Utils.nextID(100,1000));
-            setCustomerID(customerID);
-            setDeviceID(deviceID);
-            setDate(date);
-            setPurchaseType(purchaseType);
+        public Purchase(int customerID , int deviceID, String date, PurchaseType purchaseType ) throws Exception {
+            if (setDate(date)) {
+                setPurchaseID(Utils.nextID(100, 1000));
+                setCustomerID(customerID);
+                setDeviceID(deviceID);
+                setPurchaseType(purchaseType);
+                setDate(date);
+            }else {
+                throw new Exception("Invalid date value");
+            }
+
     }
 
     public int getPurchaseID(){
@@ -40,9 +45,14 @@ public abstract class Purchase {
             return date;
     }
 
-    public void setDate(String date) {
+    public boolean setDate(String date) {
+
+        if (Utils.stringLength(date, 8 , 8)) {
 
             this.date = date;
+            return true;
+        }
+        return false;
     }
 
     public int getDeviceID() {

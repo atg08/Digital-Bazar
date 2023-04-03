@@ -1,10 +1,16 @@
 package main.controllers;
 
-import main.models.*;
-import main.utils.MenuManager;
+import main.models.devices.Computer;
+import main.models.devices.Device;
+import main.models.devices.Printer;
+import main.models.purchases.InStorePurchase;
+import main.models.purchases.OnlinePurchase;
+import main.utils.IMenuManager;
+import main.utils.MenuManagerAdmin;
 import main.utils.PurchaseType;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -16,13 +22,8 @@ public class Store implements IData {
     private ArrayList<Printer> printers = new ArrayList<>();
     private ArrayList<Device> device = new ArrayList<>();
     private PurchaseManager purchaseManager;
-    private MenuManager menuManager;
+    private IMenuManager menuManager;
 
-
-    /*public void initStore(int lengthOfComp , int lengthOfPrinter) {
-        this.computers = new ArrayList<>(lengthOfComp);
-        this.printers = new ArrayList<>(lengthOfPrinter);
-    }*/
 
     //method that creates computers with users input
     public void createComputers() {
@@ -34,9 +35,13 @@ public class Store implements IData {
         description = sel.nextLine();
         System.out.print("Enter Computer Manufacture: ");
         manufacture = sel.next();
-        Computer aComputer = new Computer(name, description, manufacture);
-        computers.add(aComputer);
-        device.add(aComputer);
+        try {
+            Computer aComputer = new Computer(name, description, manufacture);
+            computers.add(aComputer);
+            device.add(aComputer);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     //method that creates printers with users input
@@ -48,11 +53,17 @@ public class Store implements IData {
         name = sel.nextLine();
         System.out.print("Enter Device Description:");
         description = sel.nextLine();
-        System.out.print("Enter the number of pages per minute: ");
-        ppm = sel.nextInt();
-        Printer aPrinter = new Printer(name, description, ppm);
-        printers.add(aPrinter);
-        device.add(aPrinter);
+        try {
+            System.out.print("Enter the number of pages per minute: ");
+            ppm = Integer.parseInt(sel.nextLine());
+            Printer aPrinter = new Printer(name, description, ppm);
+            printers.add(aPrinter);
+            device.add(aPrinter);
+        }catch (NumberFormatException e){
+            System.out.println("Invalid input - use integer");
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void createPurchase() {
@@ -64,7 +75,7 @@ public class Store implements IData {
         customerID = Integer.parseInt(sel.nextLine());
         System.out.print("Enter Device ID: ");
         deviceID = Integer.parseInt(sel.nextLine());
-        System.out.print("Enter the date: ");
+        System.out.print("Enter the date (dd/mm/yy): ");
         date = sel.nextLine();
         System.out.print("Enter Type: (0 online) or (1 in store) ");
         type = Integer.parseInt(sel.nextLine());
@@ -72,15 +83,23 @@ public class Store implements IData {
         if (type == 0) {
             System.out.print("Enter Delivery address: ");
             location = sel.nextLine();
-            OnlinePurchase onlinePurchase = new OnlinePurchase(customerID, deviceID, date, PurchaseType.ONLINE , location);
-            purchaseManager.makePurchase(this, onlinePurchase);
+            try {
+                OnlinePurchase onlinePurchase = new OnlinePurchase(customerID, deviceID, date, PurchaseType.ONLINE, location);
+                purchaseManager.makePurchase(this, onlinePurchase);
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
 
         }
         else{
             System.out.print("Enter Store address: ");
             location = sel.nextLine();
-            InStorePurchase inStorePurchase = new InStorePurchase(customerID, deviceID, date, PurchaseType.IN_STORE ,location);
-            purchaseManager.makePurchase(this, inStorePurchase);
+            try {
+                InStorePurchase inStorePurchase = new InStorePurchase(customerID, deviceID, date, PurchaseType.IN_STORE, location);
+                purchaseManager.makePurchase(this, inStorePurchase);
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
         }
 
     }
@@ -99,7 +118,7 @@ public class Store implements IData {
         }
     }
 
-    public Store(PurchaseManager pm, MenuManager mm){
+    public Store(PurchaseManager pm, IMenuManager mm){
         this.purchaseManager = pm;
         this.menuManager = mm;
 
@@ -118,7 +137,6 @@ public class Store implements IData {
             }
         }
         return false;
-
     }
 
 }
