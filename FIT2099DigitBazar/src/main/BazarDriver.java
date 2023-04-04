@@ -10,14 +10,14 @@ public class BazarDriver {
 
 
     public static void main(String[] args) {
-
-        IMenuManager menuManagerAdmin = new MenuManagerAdmin();
-        Store store = new Store(PurchaseManager.getInstance() , menuManagerAdmin);
+        PurchaseManager purchaseManager = PurchaseManager.getInstance();
+        IMenuManager menuManager =  MenuManagerAdmin.getInstance();
+        Store store =  Store.getInstance(purchaseManager , menuManager);
 
         //adding console I/O
         int selection;
         do {
-            selection = menuManagerAdmin.menuItem();
+            selection = menuManager.menuItem();
             switch (selection) {
                 case 1:
                     store.createComputers();

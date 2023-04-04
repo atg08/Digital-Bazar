@@ -6,11 +6,8 @@ import main.models.devices.Printer;
 import main.models.purchases.InStorePurchase;
 import main.models.purchases.OnlinePurchase;
 import main.utils.IMenuManager;
-import main.utils.MenuManagerAdmin;
 import main.utils.PurchaseType;
-
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -25,7 +22,6 @@ public class Store implements IData {
     private IMenuManager menuManager;
 
 
-    //method that creates computers with users input
     public void createComputers() {
         String name, description, manufacture;
         Scanner sel = new Scanner(System.in);
@@ -44,7 +40,6 @@ public class Store implements IData {
         }
     }
 
-    //method that creates printers with users input
     public void createPrinters() {
         String name, description;
         int ppm;
@@ -101,7 +96,6 @@ public class Store implements IData {
                 System.out.println(e.getMessage());
             }
         }
-
     }
 
     //prints computers
@@ -118,12 +112,10 @@ public class Store implements IData {
         }
     }
 
-    public Store(PurchaseManager pm, IMenuManager mm){
+    /*public Store(PurchaseManager pm, IMenuManager mm){
         this.purchaseManager = pm;
-        this.menuManager = mm;
+        this.menuManager = mm; }*/
 
-    }
-    //comment
 
     public void printPurchases(){
         purchaseManager.printPurchases();
@@ -137,6 +129,20 @@ public class Store implements IData {
             }
         }
         return false;
+    }
+
+    private static Store instance;
+
+    private Store(PurchaseManager pm, IMenuManager mm) {
+        this.purchaseManager = pm;
+        this.menuManager = mm;
+    }
+
+    public static Store getInstance(PurchaseManager pm, IMenuManager mm){
+        if (instance == null){
+            instance = new Store(pm, mm);
+        }
+        return instance;
     }
 
 }

@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class MenuManagerAdmin implements IMenuManager {
 
-    //creating a menu to choose from
-
     public int menuItem() {
         Scanner sel = new Scanner(System.in);
 
@@ -23,5 +21,16 @@ public class MenuManagerAdmin implements IMenuManager {
         int choice = Integer.parseInt(sel.nextLine());
         System.out.println("Your choice:"+choice);
         return choice;
+    }
+
+    private static MenuManagerAdmin instance;
+
+    private MenuManagerAdmin(){}
+
+    public static MenuManagerAdmin getInstance(){
+        if (instance == null){
+            instance = new MenuManagerAdmin();
+        }
+        return instance;
     }
 }

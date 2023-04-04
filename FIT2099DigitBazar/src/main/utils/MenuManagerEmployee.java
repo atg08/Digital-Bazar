@@ -16,4 +16,15 @@ public class MenuManagerEmployee implements IMenuManager{
         System.out.println("Your choice:"+choice);
         return choice;
     }
+
+    private static MenuManagerEmployee instance;
+
+    private MenuManagerEmployee(){}
+
+    public static MenuManagerEmployee getInstance(){
+        if (instance == null){
+            instance = new MenuManagerEmployee();
+        }
+        return instance;
+    }
 }
