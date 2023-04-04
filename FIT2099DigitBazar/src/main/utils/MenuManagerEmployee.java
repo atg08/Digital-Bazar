@@ -25,6 +25,7 @@ public class MenuManagerEmployee implements IMenuManager{
         if (instance == null){
             instance = new MenuManagerEmployee();
         }
+
         return instance;
     }
 }
