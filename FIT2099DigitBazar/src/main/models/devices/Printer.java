@@ -22,7 +22,7 @@ public class Printer extends Device {
     //setter setPpm
     public boolean setPpm(int ppm) {
 
-        if (Utils.intergerRange(ppm, 5 , 20)) {
+        if (Utils.intergerRange(ppm, 1 , 50)) {
 
             this.ppm = ppm;
             return true;

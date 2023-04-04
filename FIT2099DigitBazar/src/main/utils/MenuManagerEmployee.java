@@ -12,8 +12,18 @@ public class MenuManagerEmployee implements IMenuManager{
         System.out.println("3) New Purchase");
         System.out.println("4) Exit");
         System.out.print("Select one:");
-        int choice = Integer.parseInt(sel.nextLine());
-        System.out.println("Your choice:"+choice);
+        int choice = 0;
+        try {
+            choice = Integer.parseInt(sel.nextLine());
+            if (choice < 4 && choice > 0) {
+                System.out.println("Your choice:" + choice);
+            }else {
+                choice = -1;
+            }
+
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input - use integer");
+        }
         return choice;
     }
 

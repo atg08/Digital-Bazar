@@ -1,6 +1,7 @@
 package main.utils;
 
 import main.controllers.PurchaseManager;
+import main.controllers.Store;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -18,8 +19,13 @@ public class MenuManagerAdmin implements IMenuManager {
         System.out.println("6) List Purchases");
         System.out.println("7) Exit");
         System.out.print("Select one:");
-        int choice = Integer.parseInt(sel.nextLine());
-        System.out.println("Your choice:"+choice);
+        int choice = 0;
+        try {
+            choice = Integer.parseInt(sel.nextLine());
+            System.out.println("Your choice:" + choice);
+        }catch (NumberFormatException e) {
+            System.out.println("Invalid input - use integer");
+        }
         return choice;
     }
 
@@ -33,4 +39,5 @@ public class MenuManagerAdmin implements IMenuManager {
         }
         return instance;
     }
+
 }

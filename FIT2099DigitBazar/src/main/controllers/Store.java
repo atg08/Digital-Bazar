@@ -6,6 +6,7 @@ import main.models.devices.Printer;
 import main.models.purchases.InStorePurchase;
 import main.models.purchases.OnlinePurchase;
 import main.utils.IMenuManager;
+import main.utils.MenuManagerEmployee;
 import main.utils.PurchaseType;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -145,5 +146,33 @@ public class Store implements IData {
         return instance;
     }
 
+    public void runBazar() {
+        int selection;
+        do {
+            selection = menuManager.menuItem();
+            switch (selection) {
+                case 1:
+                    createComputers();
+                    break;
+                case 2:
+                    createPrinters();
+                    break;
+                case 3:
+                    createPurchase();
+                    break;
+                case 4:
+                    printComputers();
+                    break;
+                case 5:
+                    printPrinters();
+                    break;
+                case 6:
+                    printPurchases();
+                    break;
+
+                default: System.exit(0);
+            }
+        } while (selection != 7) ;
+    }
 }
 
