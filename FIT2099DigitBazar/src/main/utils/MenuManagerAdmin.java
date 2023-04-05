@@ -1,13 +1,22 @@
 package main.utils;
 
-import main.controllers.PurchaseManager;
 import main.controllers.Store;
-
-import java.util.ArrayList;
 import java.util.Scanner;
+
+/**
+ * Creating a class named MenuManagerAdmin that implements from the interface called
+ * @author Aditti Gupta
+ * @version 1.0.0
+ * @see Store
+ * @see IMenuManager
+ */
 
 public class MenuManagerAdmin implements IMenuManager {
 
+    /**
+     * method - menuItem - that displays a list of available options
+     * @return choice - the number chosen by the customer
+     */
     public int menuItem() {
         Scanner sel = new Scanner(System.in);
 
@@ -29,10 +38,20 @@ public class MenuManagerAdmin implements IMenuManager {
         return choice;
     }
 
+    /**
+     * Creating an instance
+     */
     private static MenuManagerAdmin instance;
 
+    /**
+     * Private constructor
+     */
     private MenuManagerAdmin(){}
 
+    /**
+     * method - getInstance() to get only one instance of the object
+     * @return instance that was created or instance what was pre-existing
+     */
     public static MenuManagerAdmin getInstance(){
         if (instance == null){
             instance = new MenuManagerAdmin();

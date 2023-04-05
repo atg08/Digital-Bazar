@@ -1,9 +1,23 @@
 package main.utils;
 
+import main.controllers.Store;
+
 import java.util.Scanner;
+
+/**
+ * Creating a class named MenuManagerEmployee that implements from the interface called
+ * @author Aditti Gupta
+ * @version 1.0.0
+ * @see Store
+ * @see IMenuManager
+ */
 
 public class MenuManagerEmployee implements IMenuManager{
 
+    /**
+     * method - menuItem - that displays a list of available options
+     * @return choice - the number chosen by the customer
+     */
     public int menuItem() {
         Scanner sel = new Scanner(System.in);
 
@@ -27,15 +41,24 @@ public class MenuManagerEmployee implements IMenuManager{
         return choice;
     }
 
+    /**
+     * Creating an instance
+     */
     private static MenuManagerEmployee instance;
 
+    /**
+     * Private constructor
+     */
     private MenuManagerEmployee(){}
 
+    /**
+     * method - getInstance() to get only one instance of the object
+     * @return instance that was created or instance what was pre-existing
+     */
     public static MenuManagerEmployee getInstance(){
         if (instance == null){
             instance = new MenuManagerEmployee();
         }
-
         return instance;
     }
 }

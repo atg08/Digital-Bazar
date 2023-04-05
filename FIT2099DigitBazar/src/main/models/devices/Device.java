@@ -2,16 +2,29 @@ package main.models.devices;
 
 import main.utils.Utils;
 
-//making device an abstract class
+
+/**
+ * Creating an abstract class named Device
+ * @author Aditti Gupta
+ * @version 1.0.0
+ * @see Computer
+ * @see Printer
+ */
+
 public abstract class Device {
-
-    // attributes
-
+    /**
+     * attributes - initialising name, description and id
+     */
     private String name;
     private String description;
     private int id;
 
-    //constructor with two parameters
+    /**
+     *
+     * @param name of device of type String
+     * @param description of device of type String
+     * @throws Exception when (setName(name) && setDescription(description)) is false
+     */
     public Device(String name,String description) throws Exception {
         if (setName(name) && setDescription(description)){
             setName(name);
@@ -21,10 +34,17 @@ public abstract class Device {
         }
     }
 
-    //creating an abstract method
+    /**
+     *
+     * creating an abstract method - generateId()
+     */
     public abstract int generateId();
 
-    //setter setName
+    /**
+     * setter - setName
+     * @param name setting name of device
+     * @return boolean value true or false depending on given range
+     */
     public boolean setName(String name) {
 
         if (Utils.stringLength(name, 3 , 15)) {
@@ -34,13 +54,22 @@ public abstract class Device {
         }
         return false;
     }
-    //getter getName
+
+    /**
+     * getter - getName
+     * @return boolean value true or false depending on given range
+     */
     public String getName() {
 
         return name;
     }
 
-    //setter setDescription
+
+    /**
+     * setter - setDescription
+     * @param description setting description of device
+     * @return boolean value true or false depending on given range
+     */
     public boolean setDescription(String description) {
 
         if (Utils.stringLength(description, 5 , 20)) {
@@ -52,26 +81,38 @@ public abstract class Device {
 
     }
 
-    //getter getDescription
+    /**
+     * getter - getDescription
+     * @return boolean value true or false depending on given range
+     */
     public String getDescription() {
 
         return description;
     }
 
 
-    //setter for abstract method
+    /**
+     * setter - setId for abstract method
+     * @param id of type int
+     */
     public void setId(int id) {
 
         this.id = id;
     }
 
-    //getter for abstract method
+    /**
+     * getter - getId for abstract method
+     * @return id
+     */
     public int getId() {
 
         return id;
     }
 
-    //toString method
+    /**
+     * method - toString
+     * @return a string containing specified details
+     */
     @Override
     public String toString() {
         return " | name: " + getName()+

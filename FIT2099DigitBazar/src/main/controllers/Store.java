@@ -12,16 +12,29 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class Store implements IData {
-    //class to create and manage computers and printers
 
-    //using ArrayLists instead of Arrays
+/**
+ * Creating a class named Store that implements IData interface
+ * @author Aditti Gupta
+ * @version 1.0.0
+ * @see Store
+ * @see IData
+ */
+
+public class Store implements IData {
+    /*
+     * attributes - initialised to create new objects
+     */
     private ArrayList<Computer> computers = new ArrayList<>();
     private ArrayList<Printer> printers = new ArrayList<>();
     private ArrayList<Device> device = new ArrayList<>();
     private PurchaseManager purchaseManager;
     private IMenuManager menuManager;
 
+
+    /**
+     * method - createComputers to create new computer with its name, description and manufacture
+     */
 
     public void createComputers() {
         String name, description, manufacture;
@@ -40,6 +53,10 @@ public class Store implements IData {
             System.out.println(e.getMessage());
         }
     }
+
+    /**
+     * method - createPrinters to create new printer with its name, description and ppm
+     */
 
     public void createPrinters() {
         String name, description;
@@ -61,6 +78,10 @@ public class Store implements IData {
             System.out.println(e.getMessage());
         }
     }
+
+    /**
+     * method - createPurchase to create new purchase
+     */
 
     public void createPurchase() {
         int customerID , deviceID , type;
@@ -99,28 +120,37 @@ public class Store implements IData {
         }
     }
 
-    //prints computers
+    /**
+     * method - printComputers to print the created computers
+     */
     public void printComputers(){
         for (int i =0; i<computers.size();i++){
             System.out.println("Computer (" + (i+1) + ") ID: "+ computers.get(i).getId()+ " | Type: " + computers.get(i));
         }
     }
 
-    //prints printers
+    /**
+     * method - printPrinters to print the created printers
+     */
     public void printPrinters(){
         for (int i =0; i<printers.size();i++) {
             System.out.println("Printer ("+(i+1)+ ") ID: " + printers.get(i).getId()+ " | Type: "+ printers.get(i));
         }
     }
 
-    /*public Store(PurchaseManager pm, IMenuManager mm){
-        this.purchaseManager = pm;
-        this.menuManager = mm; }*/
-
-
+    /**
+     * method - printPurchases to print the created purchases
+     */
     public void printPurchases(){
+
         purchaseManager.printPurchases();
     }
+
+    /**
+     * method - printComputers to print the created computers
+     * @param id of type integer
+     * @return boolean value tru or false
+     */
 
     @Override
     public boolean isDeviceAvailable(int id) {
@@ -132,12 +162,27 @@ public class Store implements IData {
         return false;
     }
 
+
+    /**
+     * Creating an instance
+     */
     private static Store instance;
+
+    /**
+     * Private constructor
+     */
 
     private Store(PurchaseManager pm, IMenuManager mm) {
         this.purchaseManager = pm;
         this.menuManager = mm;
     }
+
+    /**
+     * method - getInstance() to get only one instance of the object
+     * @param pm of type PurchaseManager
+     * @param mm of type IMenuManager
+     * @return instance that was created or instance what was pre-existing
+     */
 
     public static Store getInstance(PurchaseManager pm, IMenuManager mm){
         if (instance == null){
@@ -145,6 +190,10 @@ public class Store implements IData {
         }
         return instance;
     }
+
+    /**
+     * method - runBazar()
+     */
 
     public void runBazar() {
         int selection;
