@@ -2,45 +2,25 @@ package main;
 
 import main.controllers.PurchaseManager;
 import main.controllers.Store;
-import main.utils.MenuManager;
+import main.utils.IMenuManager;
+import main.utils.MenuManagerAdmin;
+import main.utils.MenuManagerEmployee;
 
-import static main.utils.MenuManager.menuItem;
+/**
+ * Creating the driver class named BazarDriver that runs the code
+ * @author Aditti Gupta
+ * @version 1.0.0
+ */
 
 public class BazarDriver {
-
-
     public static void main(String[] args) {
-
-        MenuManager menuManager = new MenuManager();
-        Store store = new Store(PurchaseManager.getInstance() , menuManager);
-
-        //adding console I/O
-        int selection;
-        do {
-            selection = menuItem();
-            switch (selection) {
-                case 1:
-                    store.createComputers();
-                    break;
-                case 2:
-                    store.createPrinters();
-                    break;
-                case 3:
-                    store.createPurchase();
-                    break;
-                case 4:
-                    store.printComputers();
-                    break;
-                case 5:
-                    store.printPrinters();
-                    break;
-                case 6:
-                    store.printPurchases();
-                    break;
-
-                default: System.exit(0);
-            }
-        } while (selection != 7);
+        try {
+            PurchaseManager purchaseManager = PurchaseManager.getInstance();
+            IMenuManager menuManager = MenuManagerAdmin.getInstance();
+            Store store = Store.getInstance(purchaseManager, menuManager);
+            store.runBazar();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
-
 }
